@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar javascript</title>
+  </head>
+  <body>
+    <script>
+      let pegawai = "Ridwan";
+      let jabatan = "manager";
+      let status = "menikah";
+      let gajiPokok;
+
+      if (jabatan == "manager") {
+        gajiPokok = 15000000;
+      } else if (jabatan == "asisten") {
+        gajiPokok = 10000000;
+      } else if (jabatan == "staff") {
+        gajiPokok = 5000000;
+      } else {
+        gajiPokok = 0;
+      }
+
+      let tunjanganJabatan = 0.15 * gajiPokok;
+      let tunjanganBpjs = 0.1 * gajiPokok;
+      let tunjanganKeluarga = status == "menikah" ? 0.2 * gajiPokok : 0;
+
+      let totalTunjangan = tunjanganJabatan + tunjanganBpjs + tunjanganKeluarga;
+      let totalgaji = totalTunjangan + gajiPokok;
+
+      const Html = `<center>
+      <table
+        border="1"
+        width="500"
+        height="500"
+        cellpadding="10"
+        cellspacing="0"
+      >
+        <thead bgcolor="aqua">
+          <th colspan="2">SLIP GAJI</th>
+        </thead>
+        <thead>
+          <th>Nama Pengawai</th>
+          <th>${pegawai}</th>
+        </thead>
+        <thead>
+          <th>Jabatan</th>
+          <th>${jabatan}</th>
+        </thead>
+        <thead>
+          <th>Status</th>
+          <th>${status}</th>
+        </thead>
+        <tbody>
+          <tr bgcolor="aqua">
+            <th colspan="2">PENDAPATAN</th>
+          </tr>
+          <tr>
+            <td>Gaji Pokok</td>
+            <td>${gajiPokok}</td>
+          </tr>
+          <tr>
+            <td>Tunjangan Jabatan</td>
+            <td>${tunjanganJabatan}</td>
+          </tr>
+          <tr>
+            <td>Tunjangan BPJS</td>
+            <td>${tunjanganBpjs}</td>
+          </tr>
+          <tr>
+            <td>Tunjangan Keluarga</td>
+            <td>${tunjanganKeluarga}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr bgcolor="lightgrey">
+            <th>TOTAL GAJI</th>
+            <th>${totalgaji}</th>
+          </tr>
+        </tfoot>
+      </table>
+    </center>`;
+
+      document.write(Html);
+    </script>
+  </body>
+</html>
