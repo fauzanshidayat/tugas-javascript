@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Siswa</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Data Siswa</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Nilai</th>
+          <th>Keterangan</th>
+          <th>Grade</th>
+          <th>Predikat</th>
+        </tr>
+      </thead>
+      <tbody id="dataSiswa"></tbody>
+    </table>
+
+    <script>
+      var dataSiswa = [
+        { nomor: 1, nama: "Nasir", nilai: 90 },
+        { nomor: 2, nama: "Anam", nilai: 80 },
+        { nomor: 3, nama: "Fauzan", nilai: 70 },
+        { nomor: 4, nama: "Alex", nilai: 60 },
+        { nomor: 5, nama: "Samuel", nilai: 50 },
+      ];
+
+      function hitungGradeDanPredikat(nilai) {
+        var grade, predikat;
+        switch (true) {
+          case nilai >= 90 && nilai <= 100:
+            grade = "A";
+            predikat = "Baik Sekali";
+            break;
+          case nilai >= 80 && nilai <= 90:
+            grade = "B";
+            predikat = "Baik";
+            break;
+          case nilai >= 70 && nilai <= 80:
+            grade = "C";
+            predikat = "Cukup";
+            break;
+          case nilai >= 60 && nilai <= 70:
+            grade = "D";
+            predikat = "Kurang";
+            break;
+          default:
+            grade = "E";
+            predikat = "Mungki Anda Tidak Cocok Di jurusan ini";
+        }
+        return { grade: grade, predikat: predikat };
+      }
+
+      var tableBody = document.getElementById("dataSiswa");
+      dataSiswa.forEach(function (siswa) {
+        var nilai = siswa.nilai;
+        var gradePredikat = hitungGradeDanPredikat(nilai);
+        var newRow = "<tr>";
+        newRow += "<td>" + siswa.nomor + "</td>";
+        newRow += "<td>" + siswa.nama + "</td>";
+        newRow += "<td>" + nilai + "</td>";
+        newRow += "<td>" + (nilai >= 60 ? "Lulus" : "Tidak Lulus") + "</td>";
+        newRow += "<td>" + gradePredikat.grade + "</td>";
+        newRow += "<td>" + gradePredikat.predikat + "</td>";
+        newRow += "</tr>";
+        tableBody.innerHTML += newRow;
+      });
+    </script>
+  </body>
+</html>
