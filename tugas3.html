@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir</title>
+  </head>
+  <body>
+    <center>
+      <form id="myForm">
+        <table cellpadding="10">
+          <thead>
+            <tr>
+              <th colspan="2">Data Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label for="nama">Nama:</label></td>
+              <td><input type="text" id="nama" name="nama" /></td>
+            </tr>
+            <tr>
+              <td><label for="pekerjaan">Pekerjaan:</label></td>
+              <td><input type="text" id="pekerjaan" name="pekerjaan" /></td>
+            </tr>
+            <tr>
+              <td><label for="hobi">Hobi:</label></td>
+              <td><input type="text" id="hobi" name="hobi" /></td>
+            </tr>
+            <tr>
+              <td>
+                <button type="button" onclick="submitForm()">Submit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <div id="result"></div>
+    </center>
+
+    <script>
+      function submitForm() {
+        var nama = document.getElementById("nama").value;
+        var pekerjaan = document.getElementById("pekerjaan").value;
+        var hobi = document.getElementById("hobi").value;
+
+        var result = document.getElementById("result");
+
+        if (nama === "" || pekerjaan === "" || hobi === "") {
+          result.innerHTML =
+            "<h3>Data Anda kosong. Silakan isi semua bidang.</h3>";
+        } else {
+          result.innerHTML =
+            "<h2>Hasil:</h2>" +
+            "<h3>Nama: " +
+            nama +
+            "</h3>" +
+            "<h3>Pekerjaan: " +
+            pekerjaan +
+            "</h3>" +
+            "<h3>Hobi: " +
+            hobi +
+            "</h3>";
+        }
+      }
+    </script>
+  </body>
+</html>
