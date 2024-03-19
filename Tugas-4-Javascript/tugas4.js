@@ -36,7 +36,7 @@ function transaksi() {
   let totalgaji = totalTunjangan + gajiPokok;
 
   swal({
-    title: "Gaji Karyawan",
+    title: "Data Gaji Pegawai",
     text: `Nama Pegawai : ${pegawai}
   Jabatan : ${jabatan}
   Status : ${status}
