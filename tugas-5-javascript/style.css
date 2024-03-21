@@ -1,0 +1,66 @@
+.gambar-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gambar {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gambar:hover {
+    transform: scale(1.2);
+}
+
+#kucing {
+    background-image: url('gambar_kucing.jpg');
+}
+
+#anjing {
+    background-image: url('gambar_anjing.jpg');
+}
+
+#burung {
+    background-image: url('gambar_burung.jpg');
+}
+
+#harimau {
+    background-image: url('harimau.jpg');
+}
+
+#kuda {
+    background-image: url('kuda.jpg');
+}
+
+#kambing {
+    background-image: url('kambing.jpg');
+}
+
+#ayam {
+    background-image: url('ayam.jpg');
+}
+
+
+.teks {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
+}
+
+.suara {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-style: italic;
+    text-shadow: 2px 2px 5px black;
+}
